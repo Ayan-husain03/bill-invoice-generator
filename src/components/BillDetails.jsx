@@ -1,23 +1,26 @@
 import React from "react";
 import { useState } from "react";
 
-function BillDetails({onAddItem}) {
+function BillDetails({ onAddItem }) {
   const [item, setItem] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [error, setError] = useState("");
 
   function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     if (!item.trim()) {
-      setError("please enter some item")
+      setError("please enter some item");
       setTimeout(() => {
-        setError("")
+        setError("");
       }, 2000);
-      return
+      return;
     }
-    const newItem = { item, price, quantity }
-    onAddItem(newItem)
+    const newItem = { item, price, quantity };
+    onAddItem(newItem);
+    setItem("");
+    setPrice("");
+    setQuantity("");
   }
 
   return (
@@ -32,19 +35,19 @@ function BillDetails({onAddItem}) {
         <Input
           type="number"
           label={"Price"}
-          placeholder={"Enter item"}
+          placeholder={"Enter price"}
           value={price}
           onchange={(e) => setPrice(Number(e.target.value))}
         />
         <Input
           type="number"
           label={"Quantity"}
-          placeholder={"Enter item"}
+          placeholder={"Enter quantity"}
           value={quantity}
           onchange={(e) => setQuantity(Number(e.target.value))}
         />
         <button className="add-btn">Add item</button>
-        <p style={{color : "red"}}>{error}</p>
+        <p style={{ color: "red" }}>{error}</p>
       </form>
     </div>
   );
@@ -52,7 +55,14 @@ function BillDetails({onAddItem}) {
 
 export default BillDetails;
 
-function Input({ label, className = "input", value, type="text", onchange, placeholder }) {
+function Input({
+  label,
+  className = "input",
+  value,
+  type = "text",
+  onchange,
+  placeholder,
+}) {
   return (
     <div>
       <label>{label}</label>

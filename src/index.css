@@ -13,7 +13,12 @@ height: 100%;
     background-color: #F1EFEC;
     margin: 10px auto;
     padding: 20px;
+    position: relative;
 
+}
+.heading {
+    text-align: center;
+    margin: 10px 0;
 }
 
 .input {
@@ -32,7 +37,40 @@ height: 100%;
 .add-btn {
     padding: 8px 28px;
     border: 0;
+    margin: 10px 0;
     background-color: #123458;
     color: #fff;
     border-radius: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5px 0;
+}
+th, td {
+    border: 1px solid #aaaaaa;
+    padding: 8px;
+}
+th {
+    background-color: #123458;
+    color: #fff;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.edit, .del {
+    font-size: 20px;
+    border: 0;
+    cursor: pointer;
+}
+.totalAmount {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #123458;
+    color: #F1EFEC;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
