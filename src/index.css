@@ -11,9 +11,8 @@ height: 100%;
 .container{
     max-width: 750px;
     background-color: #F1EFEC;
-    margin: 10px auto;
+    margin: auto;
     padding: 20px;
-    position: relative;
 
 }
 .heading {
@@ -73,4 +72,20 @@ th {
     padding: 10px;
     display: flex;
     justify-content: space-between;
+}
+.item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h1 {
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+}
+.download-btn {
+    border: 0;
+    background-color: #123458;
+    color: #F1EFEC;
+    padding: 8px 15px;
+    border-radius: 5px;
 }

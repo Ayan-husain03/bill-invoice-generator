@@ -1,11 +1,16 @@
 import React from "react";
-import { MdDelete, MdEdit } from "react-icons/md";
+import { MdDelete, MdDownload, MdEdit } from "react-icons/md";
 
-function ItemList({ item, onDelete }) {
- 
+function ItemList({ item, onDelete, downloadPdf }) {
   return (
     <div>
-      <h1>ItemList</h1>
+      <div className="item-header">
+        <h1>ItemList</h1>
+        <button className="download-btn" onClick={downloadPdf}>
+          {" "}
+          Download pdf <MdDownload />
+        </button>
+      </div>
       <table>
         <thead>
           <tr>
@@ -22,7 +27,7 @@ function ItemList({ item, onDelete }) {
               <td>{item.item}</td>
               <td>{item.price}</td>
               <td>{item.quantity}</td>
-              <td>{item.quantity * item.price}</td>
+              <td>₹ {item.quantity * item.price}</td>
               <td className="buttons">
                 <button className="edit">
                   <MdEdit />
